@@ -1,8 +1,8 @@
 # ep_pad-lister
 
-A plugin for Etherpad-lite that shows a list of all pads sorted by last edit date.
+**Update from johuellm:** Put the nice bootstrap table on the index page and made it beautiful.
 
-*(2018-11-27) Update from johuellm: Put the nice bootstrap table on the index page and made it beautiful.*
+A plugin for Etherpad-lite that shows a list of all pads sorted by last edit date on the index page.
 
 # Features
 
@@ -10,39 +10,10 @@ A plugin for Etherpad-lite that shows a list of all pads sorted by last edit dat
 * Ignores pads without any changes
 * Ignores private pads (= pads starting with `private_`)
 
+# Screenshot
 
-# Screenshots
-
-**New pad**
-![New Pad](https://ktt-ol.github.io/ep_pad-lister/images/new_pad.jpg)
-
-**Pad list**
-![Pad_List](https://ktt-ol.github.io/ep_pad-lister/images/pad_list.jpg)
+![New Pad](https://johuellm.github.io/ep_pad-lister/images/ep_pad-lister-index.PNG)
 
 # Install
 
-    npm install ep_pad-lister (from your etherpad-lite folder)
-
-
-Put the follwing snippet into ```src/static/custom/index.css```
-
-```
-.pad-lister-link-container {
-  font-size: 16px;
-  max-width: 500px;
-  text-align:center;
-  min-height: 20px;
-  padding: 19px;
-  margin: 50px auto;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-}
-.pad-lister-link-container .code {
-  font-family: monospace;
-  padding: 0 5px;
-  color: #c7254e;
-  background-color: #fff;
-}
-```
+`npm install johuellm/ep_pad-lister (from your etherpad-lite folder)`
