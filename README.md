@@ -2,6 +2,8 @@
 
 A plugin for Etherpad-lite that shows a list of all pads sorted by last edit date.
 
+*(2018-11-27) Update from johuellm: Put the nice bootstrap table on the index page and made it beautiful.
+
 # Features
 
 * List all pads, shows revision and last edit date
