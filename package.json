@@ -1,8 +1,9 @@
 {
   "name": "ep_pad-lister",
-  "version": "1.1.3",
-  "description": "Provides a separate list with pads, ordered by last edit.",
+  "version": "1.1.4",
+  "description": "Provides a list with pads on the index page, ordered by last edit.",
   "author": "HolgerCremer@gmail.com",
+  "contributors": ["johuellm"],
   "readmeFilename": "README.md",
   "dependencies": {
     "dateformat": "1.0.6-1.2.3"
@@ -12,6 +13,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/ktt/ep_pad-lister.git"
+    "url": "http://github.com/johuellm/ep_pad-lister.git"
   }
 }

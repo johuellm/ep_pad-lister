@@ -1,37 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Padlist</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <link href="/pad-lister/static/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.28.9/css/theme.blue.min.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.28.9/js/jquery.tablesorter.min.js"></script>
-    <style type="text/css">
-        body {
-            font-size: 16px;
-        }
-        code {
-           color: #c7254e;
-        }
-        footer {
-            background-color: #eeeeee;
-            padding: 10px;
-        }
-    </style>
-</head>
-<body>
+<div class="pad-list">
 
-<div class="jumbotron">
-    <div class="container">
-        <h1>Padlist</h1>
-
-        <p><em>All*</em> pads, sorted by last edit date.</p>
+    <div class="pad-list-header">
+        List of all Pads <br/>
+        <small>(except those starting with <code><%= PRIVATE_PAD_PREFIX %></code> and empty pads)</small>
     </div>
-</div>
-
-<div class="container">
 
     <table class="table table-striped table-hover tablesorter">
         <thead>
@@ -53,37 +25,5 @@
     </table>
             
 </div>
-    
-<footer>
-    <div class="container">
-        * pad names starting with <code><%= PRIVATE_PAD_PREFIX %></code> and new pads without any changes are NOT listed.
-    </div>
-</footer>
-    
-<script type="text/javascript">
-    $(document).ready(function() { 
-     $.tablesorter.addParser({
-          id: 'germandatetime',
-          is: function(s) {
-              return false;
-          },
-         format: function(s) {
-           var a = s.split('.');
-           a[1] = a[1].replace(/^[0]+/g,"");
-           tmp = a[2].split(' ');
-           a[2] =  tmp[0]
-           t = tmp[1].split(':');
 
-           return new Date(a[2],a[1]-1,a[0],t[0],t[1],t[2]).getTime();
-        },
-        type: 'numeric'
-      });
-        // call the tablesorter plugin 
-        $("table").tablesorter({
-            headers: { 2: { sorter:'germandatetime' }}
-          });
-    }); 
-</script>
     
-</body>
-</html>

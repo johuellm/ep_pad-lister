@@ -10,13 +10,17 @@ exports.eejsBlock_indexWrapper = function (hook_name, args, cb) {
   var render_args = {
     PRIVATE_PAD_PREFIX: PRIVATE_PAD_PREFIX
   };
-  args.content = args.content + eejs.require("ep_pad-lister/templates/linkToList.ejs", render_args);
+  args.content += '<div id="pad-list"></div><script src="./static/js/jquery.js"></script><script>$(\'head\').append(\'<link rel="stylesheet" type="text/css" href="/pad-lister/static/ep_pad-lister.css">\');$(\'head\').append(\'<link rel="stylesheet" type="text/css" href="/pad-lister/static/bootstrap.min.css">\');</script><script>$(function () { $("#pad-list").load("./pad-lister"); });</script>';
   return cb();
 };
 
 exports.registerRoute = function (hook_name, args, cb) {
   args.app.get('/pad-lister/static/bootstrap.min.css', function (req, res) {
     res.sendFile(__dirname + '/static/css/bootstrap.min.css');
+  });
+
+  args.app.get('/pad-lister/static/ep_pad-lister.css', function (req, res) {
+    res.sendFile(__dirname + '/static/css/ep_pad-lister.css');
   });
 
   args.app.get('/pad-lister', function (req, res) {
